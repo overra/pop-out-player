@@ -1,3 +1,7 @@
+if (DEV) {
+  require('../reload')
+}
+
 var tabs = {}
 var height = parseInt(300)
 var width = parseInt(1.65 * height)
