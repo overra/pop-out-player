@@ -4,6 +4,7 @@ const {resolve} = require('path')
 module.exports = env => {
   const DEV = env === 'development'
   const config = {
+    devtool: DEV ? 'inline-source-map' : null,
     context: resolve(__dirname, 'src'),
     entry: {},
     output: {
