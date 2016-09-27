@@ -1,4 +1,4 @@
-if (DEV) {
+if (window.DEV) {
   require('../reload')
 }
 

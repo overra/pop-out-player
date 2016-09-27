@@ -22,7 +22,7 @@ module.exports = env => {
     },
     plugins: [
       new webpack.DefinePlugin({
-        'DEV': DEV
+        'window.DEV': DEV
       }),
     ]
   }
