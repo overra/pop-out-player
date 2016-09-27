@@ -1,0 +1,27 @@
+{
+  "manifest_version": 2,
+  "name": "Pop-out Player",
+  "version": "0.1.0",
+  "description": "Minimal pop-out player for YouTube™",
+  "content_scripts": [{
+    "matches": ["*://www.youtube.com/watch*"],
+    "js": ["watch.js"]
+  }, {
+    "matches": ["*://www.youtube.com/embed*"],
+    "js": ["embed.js"]
+  }],
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "icons": {
+    "16": "assets/pop-32.png",
+    "48": "assets/pop-96.png",
+    "128": "assets/pop-256.png"
+  },
+  "browser_action": {},
+  "permissions": [
+    "*://www.youtube.com/*",
+    "tabs",
+    "webNavigation"
+  ]
+}
