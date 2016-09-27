@@ -1,0 +1,17 @@
+{
+  "name": "pop-out-player",
+  "version": "0.1.0",
+  "scripts": {
+    "dev": "node pack development",
+    "prod": "node pack"
+  },
+  "author": "Adam Snodgrass <overra@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.14.0",
+    "babel-plugin-transform-object-rest-spread": "^6.8.0",
+    "babel-preset-latest": "^6.14.0",
+    "fs-extra": "^0.30.0",
+    "jszip": "^3.1.2"
+  }
+}
