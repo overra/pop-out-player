@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "scripts": {
     "dev": "node pack development",
-    "prod": "node pack"
+    "prod": "node pack",
+    "test": "jest"
   },
   "author": "Adam Snodgrass <overra@gmail.com>",
   "license": "ISC",
