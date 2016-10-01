@@ -44,10 +44,11 @@ async function initEmbedScript() {
   })
 
   if (window === window.parent) {
-    console.log('window loaded')
+    // popout window created
     watchWindow()
   } else {
-    console.log('iframe loaded')
+    // is iframe
+    // TODO: make embedded videos popout
   }
 }
 
@@ -65,7 +66,6 @@ const updateStorage = throttle(() => {
     dimensions: currentDimensions,
     position: currentPosition
   }).then(() => {
-    console.log('storage update', currentDimensions, currentPosition)
     requestAnimationFrame(watchWindow)
   })
 }, 1000)
