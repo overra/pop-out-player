@@ -4,11 +4,12 @@
   "version": "0.1.0",
   "description": "Minimal pop-out player for YouTube™",
   "content_scripts": [{
-    "matches": ["*://www.youtube.com/watch*"],
-    "js": ["watch.js"]
-  }, {
-    "matches": ["*://www.youtube.com/embed*"],
-    "js": ["embed.js"]
+    "matches": [
+      "*://www.youtube.com/embed*",
+      "*://www.youtube-nocookie.com/embed*"
+    ],
+    "js": ["embed.js"],
+    "all_frames": true
   }],
   "background": {
     "scripts": ["background.js"]
@@ -18,10 +19,14 @@
     "48": "assets/pop-96.png",
     "128": "assets/pop-256.png"
   },
-  "browser_action": {},
+  "page_action": {
+    "default_title": "Open this video in its own window."
+  },
   "permissions": [
     "*://www.youtube.com/*",
+    "*://www.netflix.com/watch*",
     "tabs",
-    "webNavigation"
+    "webNavigation",
+    "storage"
   ]
 }

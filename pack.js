@@ -23,17 +23,12 @@ const assets = readdirSync(resolve(__dirname, './assets'))
     return tree
   }, {})
 
-// define content scripts as entry points
-manifest.content_scripts.forEach(scripts => {
-  scripts.js.forEach(script => {
-    config.entry[script.slice(0, -3)] = `./${script}`
-  })
-})
-
-// define background scripts as entry points
-manifest.background.scripts.forEach(script => {
-  config.entry[script.slice(0, -3)] = `./${script}`
-})
+const scripts = readdirSync(resolve(__dirname, './src'))
+  .filter(file => /[^\.test]\.js$/.test(file))
+  .reduce((tree, file) => {
+    config.entry[file.slice(0, -3)] = ['babel-polyfill', `./${file}`]
+    return tree
+  }, {})
 
 const fs = new MemoryFS()
 const compiler = webpack(config)
