@@ -37,6 +37,7 @@ let sockets = []
 compiler.outputFileSystem = fs
 
 function finishedCompiling(err, stats) {
+  console.log(stats.toString({colors: true}))
   const src = fs.readdirSync(resolve(__dirname, 'dist'))
     .reduce((tree, file) => {
       tree[file] = fs.readFileSync(resolve(__dirname, `dist/${file}`))
